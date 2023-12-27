@@ -7,16 +7,18 @@ from datetime import datetime
 # END-------------------------------------------------------------------------------------
 
 
-# import csv and set values ---------------------------------------------------------------
+# CSV and VALUES ---------------------------------------------------------------------------
+# import csv and set values 
 df = pd.read_csv('report-card.csv')
 # Set values
 date_column = 'Date'
 percentages_column = 'Score %'
 subject_column = 'Subject'
-# END ------------------------------------------------------------------------------------
+# END csv and values -----------------------------------------------------------------------
 
 
-# going down to 1 month increments -------------------------------------------------------
+# DATETIME ---------------------------------------------------------------------------------
+# going down to 1 month increments 
 df[date_column] = pd.to_datetime(df[date_column])
 df['month'] = df[date_column].dt.to_period('M')
 
